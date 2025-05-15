@@ -1,5 +1,7 @@
 # Memory Theatre
 
+![image](https://github.com/user-attachments/assets/e87bdd4a-6334-4dd1-a85d-f3253fa50f24)
+
 Memory Theatre implements **Sparse Distributed Memory (SDM)**, a mathematical model of associative memory inspired by Kanerva's work. SDM is designed for high-dimensional binary spaces and is capable of storing and retrieving patterns even in the presence of noise.
 
 ## Mathematics of Sparse Distributed Memory
