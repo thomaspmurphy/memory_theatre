@@ -8,28 +8,30 @@ Memory Theatre implements **Sparse Distributed Memory (SDM)**, a mathematical mo
 SDM operates in a high-dimensional binary space (e.g., 1000+ dimensions). Each memory location is a random binary vector (address) in this space.
 
 **Critical Distance:**
-When reading or writing, SDM activates all memory locations within a certain Hamming distance (the number of differing bits) from the query address. The critical distance \( d_c \) is typically set as a fraction of the number of dimensions:
+When reading or writing, SDM activates all memory locations within a certain Hamming distance (the number of differing bits) from the query address. The critical distance $d_c$ is typically set as a fraction of the number of dimensions:
 
-\[
+$$
 d_c = \alpha \cdot n
-\]
-where \( n \) is the number of dimensions and \( \alpha \) is a tunable parameter (e.g., 0.3 or 0.4).
+$$
+
+where $n$ is the number of dimensions and $\alpha$ is a tunable parameter (e.g., 0.3 or 0.4).
 
 **Write Operation:**
-To write a data vector \( x \) at address \( a \):
-1. Find all memory locations whose address is within \( d_c \) of \( a \).
-2. For each such location, add \( x \) to its stored data vector.
+To write a data vector $x$ at address $a$:
+1. Find all memory locations whose address is within $d_c$ of $a$.
+2. For each such location, add $x$ to its stored data vector.
 
 **Read Operation:**
-To read from address \( a \):
-1. Find all memory locations within \( d_c \) of \( a \).
+To read from address $a$:
+1. Find all memory locations within $d_c$ of $a$.
 2. Sum their data vectors and (optionally) normalize by the number of contributors.
 
 **Hamming Distance:**
-Given two binary vectors \( a, b \), the Hamming distance is:
-\[
+Given two binary vectors $a, b$, the Hamming distance is:
+
+$$
 H(a, b) = \sum_{i=1}^n |a_i - b_i|
-\]
+$$
 
 ## Usage Examples (in IEx)
 
